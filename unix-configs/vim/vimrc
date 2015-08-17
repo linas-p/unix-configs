@@ -1,0 +1,62 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" ycm https://github.com/Valloric/YouCompleteMe
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+call vundle#end()            
+filetype plugin indent on
+    
+" custom ycm configs
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" Automatically indent when entering new block.
+set autoindent
+set cindent
+
+" Display matching bracket.
+set showmatch
+set copyindent
+set number
+set ignorecase
+set list
+""show special symbols: tabs, EOL, trailing whitespaces
+set listchars=eol:$,tab:>.,trail:.,extends:#,nbsp:.
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+"highlight search results
+set hls
+
+" creates colorscheme and ensures that it is not overwritten by future
+highlight ExtraWhitespace ctermbg=red guibg=red
+
+" tab and eof symbols color scheme:grey
+highlight NonText ctermfg=DarkGray guifg=grey
+highlight SpecialKey ctermfg=DarkGray guifg=grey
+
+" match and highlight trailing white spaces
+match ExtraWhitespace /\s\+$/
+
+" remove trailing spaces before file save
+autocmd BufWritePre * :%s/\s\+$//e
+
+set backspace=indent,eol,start
+
+" Display current line and column numbers.
+set ruler
+
+" Skip command line accidental calling on completion
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+
