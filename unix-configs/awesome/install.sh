@@ -8,3 +8,4 @@ install --mode=644 rc.lua $install_dir/rc.lua
 install --mode=644 notify.lua $install_dir/notify.lua
 install --mode=644 lang.lua $install_dir/lang.lua
 install --mode=644 settings.lua $install_dir/settings.lua
+install --mode=644 xinitrc ~/.xinitrc
