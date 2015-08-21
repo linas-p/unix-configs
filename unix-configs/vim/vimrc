@@ -7,9 +7,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-call vundle#end()            
+call vundle#end()
 filetype plugin indent on
-    
+
 " custom ycm configs
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_min_num_of_chars_for_completion = 1
@@ -59,4 +59,5 @@ set ruler
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-
+" xml file allingment by gg=G
+set equalprg=xmllint\ --format\ -
