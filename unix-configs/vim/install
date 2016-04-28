@@ -1,0 +1,8 @@
+#!/bin/bash
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+cp vimrc ~/.vimrc
+vim +PluginInstall +qall
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
+wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py
+mv .ycm_extra_conf.py ~/
